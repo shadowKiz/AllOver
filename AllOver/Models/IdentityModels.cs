@@ -37,5 +37,9 @@ namespace AllOver.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<AllOver.Models.RoleViewModel> RoleViewModels { get; set; }
+
+        public System.Data.Entity.DbSet<AllOver.Models.EditUserViewModel> EditUserViewModels { get; set; }
     }
 }
