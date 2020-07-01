@@ -1,11 +1,11 @@
-﻿ilterSelection("all")
+﻿filterSelection("all")
 function filterSelection(c) {
     var x, i;
-    x = document.getElementsByClassName("filterDiv");
+    x = document.getElementsByClassName("myfilterDiv");
     if (c == "all") c = "";
     for (i = 0; i < x.length; i++) {
-        w3RemoveClass(x[i], "show");
-        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+        w3RemoveClass(x[i], "myshow");
+        if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "myshow");
     }
 }
 
@@ -32,7 +32,7 @@ function w3RemoveClass(element, name) {
 
 // Add active class to the current button (highlight it)
 var btnContainer = document.getElementById("myBtnContainer");
-var btns = btnContainer.getElementsByClassName("btn");
+var btns = btnContainer.getElementsByClassName("mybtn");
 for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function () {
         var current = document.getElementsByClassName("active");

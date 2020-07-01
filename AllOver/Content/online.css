@@ -1,4 +1,4 @@
-﻿.filterDiv {
+﻿.myfilterDiv {
     float: left;
     background-color: #2196F3;
     color: #ffffff;
@@ -9,17 +9,17 @@
     display: none;
 }
 
-.show {
+.myshow {
     display: block;
 }
 
-.container {
+.mycontainer {
     margin-top: 20px;
     overflow: hidden;
 }
 
 /* Style the buttons */
-.btn {
+.mybtn {
     border: none;
     outline: none;
     padding: 12px 16px;
@@ -27,11 +27,11 @@
     cursor: pointer;
 }
 
-    .btn:hover {
+    .mybtn:hover {
         background-color: #ddd;
     }
 
-    .btn.active {
+    .mybtn.myactive {
         background-color: #666;
         color: white;
     }
