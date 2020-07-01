@@ -295,10 +295,38 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\menu.css" />
+    <Content Include="Content\nouislider.min.css" />
+    <Content Include="Content\slick-theme.css" />
+    <Content Include="Content\slick.css" />
+    <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\allover.jpg" />
+    <Content Include="img\fondo.png" />
+    <Content Include="img\logo pagina.ico" />
+    <Content Include="img\pro1.jpg" />
+    <Content Include="img\pro10.jpg" />
+    <Content Include="img\pro2.jpg" />
+    <Content Include="img\pro3.jpg" />
+    <Content Include="img\pro4.jpg" />
+    <Content Include="img\pro6.jpg" />
+    <Content Include="img\pro7.jpg" />
+    <Content Include="img\pro8.jpg" />
+    <Content Include="img\pro9.jpg" />
+    <Content Include="img\Producto1.jpg" />
+    <Content Include="img\producto6.jpg" />
+    <Content Include="img\vista1.jpg" />
+    <Content Include="img\vista2.jpg" />
+    <Content Include="img\vista3.jpg" />
+    <Content Include="img\vista4.jpg" />
+    <Content Include="img\vistapro1.jpg" />
+    <Content Include="img\vistapro2.jpg" />
+    <Content Include="img\vistapro3.jpg" />
+    <Content Include="img\vistapro4.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\Newall - Web Deploy.pubxml" />
@@ -312,7 +340,12 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\jquery.zoom.min.js" />
+    <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\menu.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\nouislider.min.js" />
+    <Content Include="Scripts\slick.min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -325,7 +358,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Catalogo.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -357,6 +390,8 @@
     <Content Include="Views\Users\Details.cshtml" />
     <Content Include="Views\Users\Edit.cshtml" />
     <Content Include="Views\Users\Index.cshtml" />
+    <Content Include="Views\Home\Tiendasfisicas.cshtml" />
+    <Content Include="Views\Home\Tiendasonline.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

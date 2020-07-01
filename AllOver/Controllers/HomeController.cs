@@ -83,7 +83,7 @@ namespace AllOver.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Catalogo()
         {
             if (Request.IsAuthenticated)
             {
@@ -99,5 +99,41 @@ namespace AllOver.Controllers
 
             return View();
         }
+
+        [Authorize(Roles = "Cliente")]
+        public ActionResult Tiendasfisicas()
+        {
+            if (Request.IsAuthenticated)
+            {
+                var currentUserId = User.Identity.GetUserId();
+                var manager = new UserManager<AllOver.Models.ApplicationUser>(new UserStore<AllOver.Models.ApplicationUser>(new AllOver.Models.ApplicationDbContext()));
+                var currentUser = manager.FindById(currentUserId);
+                var nombre = currentUser.FistName;
+                var apellido = currentUser.LastName;
+                ViewBag.FistName = nombre;
+                ViewBag.LastName = apellido;
+            }
+
+            return View();
+        }
+
+        [Authorize(Roles = "Cliente")]
+        public ActionResult Tiendasonline()
+        {
+            if (Request.IsAuthenticated)
+            {
+                var currentUserId = User.Identity.GetUserId();
+                var manager = new UserManager<AllOver.Models.ApplicationUser>(new UserStore<AllOver.Models.ApplicationUser>(new AllOver.Models.ApplicationDbContext()));
+                var currentUser = manager.FindById(currentUserId);
+                var nombre = currentUser.FistName;
+                var apellido = currentUser.LastName;
+                ViewBag.FistName = nombre;
+                ViewBag.LastName = apellido;
+            }
+
+            return View();
+        }
     }
 }
+
+    

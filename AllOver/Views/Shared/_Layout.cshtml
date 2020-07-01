@@ -1,13 +1,30 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
+
+    <link type="text/css" rel="stylesheet" href="~/Conten/bootstrap.min.css" />
+
+
+    <link type="text/css" rel="stylesheet" href="~/Content/slick.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/slick-theme.css" />
+
+
+    <link type="text/css" rel="stylesheet" href="~/Conten/nouislider.min.css" />
+
+
+    <link rel="stylesheet" href="~/Content/font-awesome.min.css">
+
+
+    <link type="text/css" rel="stylesheet" href="~/Content/style.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/menu.css" />
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -22,17 +39,25 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Catalogo", "Catalogo", "Home")</li>
 
-                    @if (Request.IsAuthenticated && User.IsInRole("Admin")){
+                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                    {
                         <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
 
                         <li>@Html.ActionLink("Users", "Index", "Users")</li>
                     }
+                    @if (Request.IsAuthenticated && User.IsInRole("Cliente"))
+                    {
+                        <li>@Html.ActionLink("Tiendas fisicas", "Tiendasfisicas", "Home")</li>
+                        <li>@Html.ActionLink("Tiendas virtuales", "Tiendasonline", "Home")</li>
+                    }
+
                 </ul>
-               
+
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
@@ -47,6 +72,22 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Scripts/menu.js")
+    @Scripts.Render("~/Scripts/jquery.min.js")
+    @Scripts.Render("~/Scripts/bootstrap.min.js")
+    @Scripts.Render("~/Scripts/slick.min.js")
+    @Scripts.Render("~/Scripts/nouislider.min.js")
+    @Scripts.Render("~/Scripts/jquery.zoom.min.js")
+    @Scripts.Render("~/Scripts/main.js")
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/slick.min.js"></script>
+    <script src="~/Scripts/nouislider.min.js"></script>
+    <script src="~/Scripts/jquery.zoom.min.js"></script>
+    <script src="~/Scripts/main.js"></script>
+    <script src="https://kit.fontawesome.com/1c770d1a23.js"></script>
     @RenderSection("scripts", required: false)
+    
 </body>
 </html>
