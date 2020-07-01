@@ -50,6 +50,7 @@ namespace AllOver.Controllers
             }
         }
         [AllowAnonymous]
+        [Authorize(Roles = "Cliente")]
         public ActionResult Index()
         {
             if (Request.IsAuthenticated)
@@ -65,7 +66,8 @@ namespace AllOver.Controllers
 
             return View();
         }
-
+        [AllowAnonymous]
+        [Authorize(Roles = "Cliente")]
         public ActionResult About()
         {
             if (Request.IsAuthenticated)
@@ -82,7 +84,8 @@ namespace AllOver.Controllers
 
             return View();
         }
-
+        [ AllowAnonymous]
+        [Authorize(Roles = "Cliente")]
         public ActionResult Catalogo()
         {
             if (Request.IsAuthenticated)
@@ -133,7 +136,26 @@ namespace AllOver.Controllers
 
             return View();
         }
+        [AllowAnonymous]
+       
+        public ActionResult Producto()
+        {
+            if (Request.IsAuthenticated)
+            {
+                var currentUserId = User.Identity.GetUserId();
+                var manager = new UserManager<AllOver.Models.ApplicationUser>(new UserStore<AllOver.Models.ApplicationUser>(new AllOver.Models.ApplicationDbContext()));
+                var currentUser = manager.FindById(currentUserId);
+                var nombre = currentUser.FistName;
+                var apellido = currentUser.LastName;
+                ViewBag.FistName = nombre;
+                ViewBag.LastName = apellido;
+            }
+
+            return View();
+        }
+
     }
+
 }
 
     

@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>@ViewBag.Title - AllOver</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
@@ -25,6 +25,10 @@
 
     <link type="text/css" rel="stylesheet" href="~/Content/style.css" />
     <link type="text/css" rel="stylesheet" href="~/Content/menu.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/tabla.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/submenu.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/rating.css" />
+    <link type="text/css" rel="stylesheet" href="~/Content/online.css" />
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -35,7 +39,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nombre de la aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("AllOver", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -43,6 +47,8 @@
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
                     <li>@Html.ActionLink("Catalogo", "Catalogo", "Home")</li>
+
+
 
                     @if (Request.IsAuthenticated && User.IsInRole("Admin"))
                     {
@@ -55,11 +61,48 @@
                         <li>@Html.ActionLink("Tiendas fisicas", "Tiendasfisicas", "Home")</li>
                         <li>@Html.ActionLink("Tiendas virtuales", "Tiendasonline", "Home")</li>
                     }
+                    <div class="mynavbar">
+
+                        <div class="mydropdown">
+                            <button class="mydropbtn">
+                                Dropdown
+                                <i class="fa fa-caret-down"></i>
+                            </button>
+                            <div class="mydropdown-content">
+                                <div class="header">
+                                    <h2>Menu</h2>
+                                </div>
+                                <div class="myrow">
+                                    <div class="mycolumn">
+                                        <h3>Videojuegos</h3>
+                                        <a href="#">Link 1</a>
+                                        <a href="#">Link 2</a>
+                                        <a href="#">Link 3</a>
+                                    </div>
+                                    <div class="mycolumn">
+                                        <h3>Computacion</h3>
+                                        <a href="#">Link 1</a>
+                                        <a href="#">Link 2</a>
+                                        <a href="#">Link 3</a>
+                                    </div>
+                                    <div class="mycolumn">
+                                        <h3>Telefonia</h3>
+                                        <a href="#">Link 1</a>
+                                        <a href="#">Link 2</a>
+                                        <a href="#">Link 3</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </ul>
 
                 @Html.Partial("_LoginPartial")
             </div>
+
+
         </div>
     </div>
     <div class="container body-content">
@@ -86,8 +129,9 @@
     <script src="~/Scripts/nouislider.min.js"></script>
     <script src="~/Scripts/jquery.zoom.min.js"></script>
     <script src="~/Scripts/main.js"></script>
+    <script src="~/Scripts/online.js"></script>
     <script src="https://kit.fontawesome.com/1c770d1a23.js"></script>
     @RenderSection("scripts", required: false)
-    
+
 </body>
 </html>
