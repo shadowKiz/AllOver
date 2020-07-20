@@ -301,6 +301,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\estilo.css" />
     <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\indesx.css" />
     <Content Include="Content\moder-business.css" />
     <Content Include="Content\navbar.css" />
     <Content Include="Content\registro.css" />
@@ -501,6 +502,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="img\fisica\" />
+    <Folder Include="img\img2\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
