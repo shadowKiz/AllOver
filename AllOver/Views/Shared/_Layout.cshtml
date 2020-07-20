@@ -7,104 +7,67 @@
     <title>@ViewBag.Title - AllOver</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
 
-
-    <link type="text/css" rel="stylesheet" href="~/Conten/bootstrap.min.css" />
-
-
-    <link type="text/css" rel="stylesheet" href="~/Content/slick.css" />
-    <link type="text/css" rel="stylesheet" href="~/Content/slick-theme.css" />
-
-
-    <link type="text/css" rel="stylesheet" href="~/Conten/nouislider.min.css" />
-
-
-    <link rel="stylesheet" href="~/Content/font-awesome.min.css">
-
-
-    <link type="text/css" rel="stylesheet" href="~/Content/style.css" />
-    <link type="text/css" rel="stylesheet" href="~/Content/menu.css" />
-    <link type="text/css" rel="stylesheet" href="~/Content/tabla.css" />
-    <link type="text/css" rel="stylesheet" href="~/Content/submenu.css" />
-    <link type="text/css" rel="stylesheet" href="~/Content/rating.css" />
-    <link type="text/css" rel="stylesheet" href="~/Content/online.css" />
+  
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("AllOver", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
+            <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">
+                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                    <li>@Html.ActionLink("Catalogo", "Catalogo", "Home")</li></a>
+                    </li>
+                    <li class="nav-item dropdown">
 
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Catalogo", "Catalogo", "Home")</li>
+                        @if (Request.IsAuthenticated && User.IsInRole("Admin"))
+                        {
 
-
-
-                    @if (Request.IsAuthenticated && User.IsInRole("Admin"))
-                    {
-                        <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li>
-
-                        <li>@Html.ActionLink("Users", "Index", "Users")</li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">
+                        <li>@Html.ActionLink("RolesAdmin", "Index", "RolesAdmin")</li></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">
+                        <li>@Html.ActionLink("Users", "Index", "Users")</li></a>
+                        </li>
                     }
-                    @if (Request.IsAuthenticated && User.IsInRole("Cliente"))
-                    {
-                        <li>@Html.ActionLink("Tiendas fisicas", "Tiendasfisicas", "Home")</li>
-                        <li>@Html.ActionLink("Tiendas virtuales", "Tiendasonline", "Home")</li>
-                    }
-                    <div class="mynavbar">
-
-                        <div class="mydropdown">
-                            <button class="mydropbtn">
-                                Dropdown
-                                <i class="fa fa-caret-down"></i>
-                            </button>
-                            <div class="mydropdown-content">
-                                <div class="header">
-                                    <h2>Menu</h2>
+                        @if (Request.IsAuthenticated && User.IsInRole("Cliente"))
+                        {
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPortfolio" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                   Opciones
+                                    </a>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPortfolio">
+                                    <a class="dropdown-item" href="portfolio-1-col.html">@Html.ActionLink("Tiendas fisicas", "Tiendasfisicas", "Home")</a>
+                                    <a class="dropdown-item" href="portfolio-2-col.html">@Html.ActionLink("Tiendas virtuales", "Tiendasonline", "Home")</a>
+                                  
                                 </div>
-                                <div class="myrow">
-                                    <div class="mycolumn">
-                                        <h3>Videojuegos</h3>
-                                        <a href="#">Link 1</a>
-                                        <a href="#">Link 2</a>
-                                        <a href="#">Link 3</a>
-                                    </div>
-                                    <div class="mycolumn">
-                                        <h3>Computacion</h3>
-                                        <a href="#">Link 1</a>
-                                        <a href="#">Link 2</a>
-                                        <a href="#">Link 3</a>
-                                    </div>
-                                    <div class="mycolumn">
-                                        <h3>Telefonia</h3>
-                                        <a href="#">Link 1</a>
-                                        <a href="#">Link 2</a>
-                                        <a href="#">Link 3</a>
-                                    </div>
+                            </li>
+                            }
+                        </li>
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </ul>
-
-                @Html.Partial("_LoginPartial")
-            </div>
-
-
+                    </ul>
+                     
+                       <link> @Html.Partial("_LoginPartial")</li>
+                      
+</div>
         </div>
-    </div>
+    </nav>
+
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -115,22 +78,8 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/Scripts/menu.js")
-    @Scripts.Render("~/Scripts/jquery.min.js")
-    @Scripts.Render("~/Scripts/bootstrap.min.js")
-    @Scripts.Render("~/Scripts/slick.min.js")
-    @Scripts.Render("~/Scripts/nouislider.min.js")
-    @Scripts.Render("~/Scripts/jquery.zoom.min.js")
-    @Scripts.Render("~/Scripts/main.js")
-    <script src="~/Scripts/jquery.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/slick.min.js"></script>
-    <script src="~/Scripts/nouislider.min.js"></script>
-    <script src="~/Scripts/jquery.zoom.min.js"></script>
-    <script src="~/Scripts/main.js"></script>
-    <script src="~/Scripts/online.js"></script>
-    <script src="https://kit.fontawesome.com/1c770d1a23.js"></script>
+
+
     @RenderSection("scripts", required: false)
 
 </body>

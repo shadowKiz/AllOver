@@ -47,9 +47,9 @@ namespace AllOver
             app.UseTwoFactorRememberBrowserCookie(DefaultAuthenticationTypes.TwoFactorRememberBrowserCookie);
 
             // Quitar los comentarios de las siguientes líneas para habilitar el inicio de sesión con proveedores de inicio de sesión de terceros
-            app.UseMicrosoftAccountAuthentication(
-                clientId: "706de642-24dc-4976-85b7-0e3019aa4238",
-                clientSecret: "yEqB0MV_A7-1fg_5Xt-8_LD_dft4B2U4bc");
+            //app.UseMicrosoftAccountAuthentication(
+            //    clientId: "",
+            //    clientSecret: "");
 
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
